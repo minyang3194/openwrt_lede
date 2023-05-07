@@ -21,11 +21,11 @@ on:
       set_kernel:
         description: "KERNEL: 5.4.y / 5.10.y / 5.15.y / 6.1.y"
         required: false
-        default: "5.10.y"
+        default: "6.1.y"
       set_kernel_version:
         description: "输入具体内核版本:"
         required: false
-        default: "5.10.x"
+        default: "6.16.x"
       upload_firmware:
         description: "whether to  upload firmware."
         required: false
