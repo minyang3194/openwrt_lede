@@ -25,7 +25,7 @@ on:
       set_kernel_version:
         description: "输入具体内核版本:"
         required: false
-        default: "6.16.x"
+        default: "6.1.26.x"
       upload_firmware:
         description: "whether to  upload firmware."
         required: false
