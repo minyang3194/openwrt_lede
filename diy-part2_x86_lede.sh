@@ -23,13 +23,13 @@ rm -rf ./feeds/packages/multimedia/aliyundrive-webdav
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.2.3/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.99/g' package/base-files/files/bin/config_generate
 
 #修改主机名
 #sed -i 's/OpenWrt/N1/g' package/base-files/files/bin/config_generate
 
 # 添加旁路由防火墙
-echo "#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
+#echo "#iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 
 #修改build日期
 #sed -i "s/R21.6.22/R21.6.22 2021.06.27 powered by kissyouhunter/g" package/lean/default-settings/files/zzz-default-settings
@@ -57,29 +57,29 @@ sed -i 's/vpn/network/g' ./feeds/luci/applications/luci-app-zerotier/luasrc/view
 
 #wrtbwmon 实时流量监测
 
-#sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/controller/*.lua
+sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/controller/*.lua
 
-#sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/model/cbi/wrtbwmon/*.lua
+sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/model/cbi/wrtbwmon/*.lua
 
-#sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/view/wrtbwmon/*.htm
+sed -i 's/nlbw/network/g' ./feeds/luci/applications/luci-app-wrtbwmon/luasrc/view/wrtbwmon/*.htm
 
 #cpulimit cpu限制
 
-sed -i 's/\<control\>/services/g' ./feeds/kiss/luci-app-cpulimit/luasrc/controller/*.lua
+#sed -i 's/\<control\>/services/g' ./feeds/kiss/luci-app-cpulimit/luasrc/controller/*.lua
 
-sed -i 's/control/services/g' ./feeds/kiss/luci-app-cpulimit/luasrc/model/cbi/*.lua
+#sed -i 's/control/services/g' ./feeds/kiss/luci-app-cpulimit/luasrc/model/cbi/*.lua
 
 #nlbwmon  网络带宽监视器
 
-#sed -i 's/"admin", "nlbw"/"admin", "network", "nlbw"/g' ./feeds/luci/applications/luci-app-nlbwmon/luasrc/controller/*.lua
+sed -i 's/"admin", "nlbw"/"admin", "network", "nlbw"/g' ./feeds/luci/applications/luci-app-nlbwmon/luasrc/controller/*.lua
 
 #store 商店
 
-#sed -i 's/"admin", "store"/"admin", "services", "store"/g' ./feeds/kiss/luci-app-store/luasrc/controller/*.lua
+sed -i 's/"admin", "store"/"admin", "services", "store"/g' ./feeds/kiss/luci-app-store/luasrc/controller/*.lua
 
 #tencentddns 腾讯ddns
 
-sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' ./feeds/kiss/luci-app-tencentddns/files/luci/controller/*.lua
+#sed -i 's/"admin", "tencentcloud"/"admin", "services", "tencentcloud"/g' ./feeds/kiss/luci-app-tencentddns/files/luci/controller/*.lua
 
 #添加 aliyundrive-fuse
 svn co https://github.com/messense/aliyundrive-fuse/trunk/openwrt/aliyundrive-fuse ./package/aliyundrive-fuse
